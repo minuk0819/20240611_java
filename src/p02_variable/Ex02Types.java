@@ -3,8 +3,15 @@ package p02_variable;
 import p01_class.Animal;
 
 public class Ex02Types {
-  boolean power;
-  char c1;
+  // 변수의 종류 크게 : Primitive, Reference
+  // Primitive type(일반형 변수, 실제 값을 가짐 )
+  // Reference type(참조형 변수, 주소 값을 가짐.)
+
+  // 변수의 할당 = 선언 + 초기화
+  // 멤버변수는 선언만 해도 new(생성연산자) 에서 기본값으로 초기화
+  // 멤버변수가 할당이 된것은 new 에서 제외
+  boolean power = true; //할당
+  char c1; //선언
   byte b1;
   short s1;
   int i1;
@@ -14,35 +21,34 @@ public class Ex02Types {
   String str;
   Animal animal;
 
-
   public static void main(String[] args) {
-    // 변수의 종류 크게 : Primitive, Reference
-    // Primitive type ( 일반 변수는 실제 값을 가짐 )
-    boolean power = true; // 논리형, true, false 1byte, ( 1byte = 8개 )
-    char c1 = 'A'; // 문자형, 2byte, 숫자로 표현시( 0 ~ 65545)까지 가능
-    byte b1 = 10; // 정수형, 1byte, -128 ~ 127
-    short s1 = 10; // 정수형, 2byte, -32768 ~ 32769
-    int i1 = 10; // 정수형, 4byte, -2147483648 ~ 2147483647
-    long l1 = 10L; // 정수형, 8byte -? ~ ?
-    float f1 = 0.1F; // 실수형, 4byte 소수점 7째자리 10^-45승 ~ 10^38승
-    double d1 = 0.1D; // 실수형, 8byte 소수점 13째자리 10^-324승 ~ 10^308승
+    // 지역변수를 사용하기 위해서는 반드시 할당을 해야함
+    boolean power = true; // 논리형, true, false 1byte
+    char c1 = 'A'; // 문자형, 2btye, 0~65535
+    byte b1 = 10; // 정수형, 1byte, -128~127
+    short s1 = 10;// 정수형, 2byte, -32768~32767
+    int i1 = 10; // 정수형, 4byte, -2147483648~2147483647
+    long l1 = 10L;// 정수형, 8byte
+    float f1 = 0.1F; //실수형, 4byte 소수점 7째자리 10^-45~10^38
+    double d1 = 0.1D;//실수형, 8byte 소수점 13째자리 10^-324~10^308
 
-    // Reference type (참조형 변수, 주소 값을 가짐.)
-    String str = "Hello";
+    String str = "Hello"; System.out.println(str);
+    Animal animal = new Animal(); System.out.println(animal);
+    System.out.println(c1);
     System.out.println(str);
-    Animal animal = new Animal();
-    System.out.println(animal);
 
+    System.out.println("==============================");
+    // 전역변수를 사용하기 위해서는 인스턴스를 만들어야 한다.
     Ex02Types ex02Types = new Ex02Types();
-    System.out.println(ex02Types.c1);
-    System.out.println(ex02Types.b1);
-    System.out.println(ex02Types.s1);
-    System.out.println(ex02Types.i1);
-    System.out.println(ex02Types.l1);
-    System.out.println(ex02Types.f1);
-    System.out.println(ex02Types.d1);
-    System.out.println(ex02Types.str);
-    System.out.println(ex02Types.animal);
-
+    System.out.println(ex02Types.power); // 기본값 : false
+    System.out.println(ex02Types.c1);    // 기본값 : 공백
+    System.out.println(ex02Types.b1);    // 기본값 : 0
+    System.out.println(ex02Types.s1);    // 기본값 : 0
+    System.out.println(ex02Types.i1);    // 기본값 : 0
+    System.out.println(ex02Types.l1);    // 기본값 : 0
+    System.out.println(ex02Types.f1);    // 기본값 : 0.0
+    System.out.println(ex02Types.d1);    // 기본값 : 0.0
+    System.out.println(ex02Types.str);   // 기본값 : null
+    System.out.println(ex02Types.animal);// 기본값 : null
   }
 }
