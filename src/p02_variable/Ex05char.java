@@ -35,5 +35,7 @@ public class Ex05char {
     char c9 = '\n'; //개행  *많이 사용함
     char c10 = '\r'; //캐리지 리턴
     char c11 = '\f'; //폼피드
+    char c12 = '\u0000'; // 공백의 헥사값
+    c12 = ' '; // 기본값, 공백
   }
 }
