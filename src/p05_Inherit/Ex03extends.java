@@ -9,47 +9,49 @@ public class Ex03extends {
   }
 }
 
-// 추상클래스 : 스스로 인스턴스 생성 불가. 상속받은 후 인스턴스 생성 가능 ( abstract )
+// 추상클래스는 인스턴스 생성 불가. 상속받은 후 인스턴스 생성 가능
 abstract class Unit {
-  public Unit(String name, String tribe, int hp) {
+  public Unit() {
+    // this(), super()는 공존 불가: 생성자의 첫줄에 있어야 하기 때문
+    super();
+//    this("", "", 15);
+    System.out.println("야생 동물 생성");
+  }
+
+  public Unit(String tribe, String name, int hp) {
     super();
     this.tribe = tribe;this.name = name;this.hp = hp;
   }
-  String tribe; // String : 문자열
-  String name;
-  int hp;
-
+  String tribe;  String name;  int hp;
 
   public void move(int x, int y){}
   public void stop(){}
 
-  @Override // 오버로딩 : class 안에 같은 이름 ( 개발을 편하게 하기 위해 사용 )
+  @Override
   public String toString() {
-    return String.format("{name=%s, hp=%d, tribe=%s}", name,hp,tribe);
+    return String.format("%s{hp=%d, tribe=%s}",name, hp,tribe);
   }
 }
-
 abstract class Protoss extends Unit {
   // 상속할 경우에는 Member변수와 method만 상속
-  public Protoss(int hp, String name ) {
-    super("Protoss",name, hp);
+  public Protoss(String name, int hp) {
+    super("Protoss", name, hp);
   }
 }
-
 abstract class Terran extends Unit {
   // 상속할 경우에는 Member변수와 method만 상속
-  public Terran(String name ,int hp) {
-    super(name, "Terran", hp);
+  public Terran(String name, int hp) {
+    super("Terran",name, hp);
   }
 }
 
-class Marine extends Unit {
+class Marine extends Terran {
   public Marine() {
-    super( "Marine", "Terran", 60);
+    super("Marine", 60);
   }
 }
-class Medic extends Unit {
+class Medic extends Terran {
   public Medic() {
-    super("Medic", "Terran", 45);
+    super("Medic", 45);
   }
 }

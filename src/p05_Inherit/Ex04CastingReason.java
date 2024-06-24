@@ -12,6 +12,7 @@ public class Ex04CastingReason {
   }
 }
 // Buyer, Laptop, Tv, Audio ( 4개의 class )
+// super 조상꺼
 
 class Buyer {
   int money = 1000;

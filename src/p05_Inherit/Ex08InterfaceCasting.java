@@ -5,6 +5,8 @@ import common.Utils;
 // java Casting : 1. 기본형 형변환, 2. 창조형 형변환 (상속,Interface), 3. 기본형 <--> 창조형 형변환 ( 중요 )
 public class Ex08InterfaceCasting {
   public static void main(String[] args) {
+    // 참조형 타입의 형변호한은 상속관계일때, interface일 경우 적용
+    // 객체지향언어의 특징 중 하나인 다형성
     Mammals[] mammals = {new Dog(), new Cat(), new Bat()};
     Birds[] birds = {new Chicken(), new Eagle(), new Parrot()};
 
