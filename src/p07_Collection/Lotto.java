@@ -17,5 +17,5 @@ public class Lotto {
       lotto2.add((int) (Math.random() * 45) +1);
     }
     System.out.println(lotto2);
-  } //
+  }
 }
