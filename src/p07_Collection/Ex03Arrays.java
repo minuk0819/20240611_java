@@ -1,7 +1,5 @@
 package p07_Collection;
 
-// Arrays : List중 젤 많이 사용함 중요
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +8,7 @@ import java.util.function.IntUnaryOperator;
 // Arrays : Collection에 배열을 다루기 위해 추가된 클래스
 public class Ex03Arrays {
   public static void main(String[] args) {
-    int[] arr = {0, 1, 2,  3, 4};
+    int[] arr = {0, 1, 2, 3, 4};
     int[] arr2 = Arrays.copyOf(arr, arr.length);
     int[] arr3 = Arrays.copyOfRange(arr, 2, 4);
     System.out.println(Arrays.toString(arr));
@@ -33,9 +31,12 @@ public class Ex03Arrays {
     System.out.println(list);
 
     // list를 배열로
-    Integer[] arrInt2 = list.toArray(new Integer[arrInt1.length]);
+    // Integer[] arrInt2 = list.toArray(new Integer[list.size()]);
+    // 배열을 가리키는 참조변수는 null대신 길이가 0인 배열로 초기화하기도 함.
+    // 리스트를 배열로 변환하기 위해 배열을 단순히 참조. 그래서 0
+    Integer[] arrInt2 = list.toArray(new Integer[0]);
     Integer[] arrInt3 =
-        list.stream().toArray((value -> new Integer[value]));
+        list.stream().toArray(value -> new Integer[value]);
     System.out.println(Arrays.toString(arrInt2));
   }
 }
