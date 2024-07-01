@@ -1,4 +1,4 @@
-package p08_IO;
+package p09_IO;
 
 // 내용 : 입출력을 위한 활용.
 import java.io.ByteArrayInputStream;

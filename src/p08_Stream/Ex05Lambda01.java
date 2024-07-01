@@ -1,7 +1,6 @@
-package p10_Stream;
+package p08_Stream;
 
 // * Lambda식 (그렇게 중요하지는 않음) *
-import java.sql.SQLOutput;
 
 public class Ex05Lambda01 {
   public static void main(String[] args) {
