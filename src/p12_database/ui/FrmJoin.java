@@ -29,7 +29,6 @@ public class FrmJoin extends FrmBasic {
     btnJoin = new JButton("가입");
     btnLogin = new JButton("로그인");
   }
-//
 
 
 
@@ -38,3 +37,4 @@ public class FrmJoin extends FrmBasic {
   }
 
 }
+//
